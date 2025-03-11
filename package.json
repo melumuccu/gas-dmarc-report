@@ -1,0 +1,37 @@
+{
+  "author": "",
+  "dependencies": {
+    "clasp": "1.0.0"
+  },
+  "description": "Google Apps Script project template with TypeScript",
+  "devDependencies": {
+    "@types/google-apps-script": "^1.0.78",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "esbuild": "^0.20.1",
+    "esbuild-gas-plugin": "^0.8.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "prettier": "^3.2.5",
+    "typescript": "^5.3.3"
+  },
+  "keywords": [
+    "gas",
+    "clasp",
+    "typescript"
+  ],
+  "license": "ISC",
+  "main": "./src/main.ts",
+  "name": "gas-template",
+  "scripts": {
+    "build": "node esbuild.js",
+    "deploy": "npm run build && cp src/appsscript.json dist/ && clasp push",
+    "format": "prettier --write src/**/*.ts",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "open": "clasp open"
+  },
+  "type": "module",
+  "version": "1.0.0"
+}
